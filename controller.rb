@@ -4,6 +4,7 @@ require_relative 'models/game'
 
 get '/' do
   "Home Screen"
+  erb (:welcome)
 end
 
 get '/welcome' do
