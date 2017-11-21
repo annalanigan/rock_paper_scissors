@@ -1,0 +1,10 @@
+html {
+  background-image: url('/rps.jpeg');
+  background-size: cover;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: inline;
+}
