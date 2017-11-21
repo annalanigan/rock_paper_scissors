@@ -1,30 +1,14 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require_relative 'models/game'
 
 get '/' do
   'Home'
 end
 
-get '/rock/paper' do
-  "paper wins"
-end
-
-get '/rock/scissors' do
-  "rock wins"
-end
-
-get '/paper/scissors' do
-  "scissors wins"
-end
-
-get '/paper/rock' do
-  "paper wins"
-end
-
-get '/scissors/rock' do
-  "rock wins"
-end
-
-get '/scissors/paper' do
-  "scissors wins"
+get '/:hand1/:hand2' do
+  hand1 = params[:hand1]
+  hand2 = params[:hand2]
+  game1 = Game.new(hand1, hand2)
+  result = game1.play
 end
