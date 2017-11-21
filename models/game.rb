@@ -8,19 +8,21 @@ class Game
   def play
     case
     when @hand1 == 'scissors' && @hand2 == 'paper'
-      return 'scissors'
+      return @hand1
     when @hand1 == 'paper' && @hand2 == 'rock'
-      return 'paper'
+      return @hand1
     when @hand1 == 'rock' && @hand2 == 'scissors'
-      return 'rock'
+      return @hand1
     when @hand1 == 'paper' && @hand2 == 'scissors'
-      return 'scissors'
+      return @hand2
     when @hand1 == 'rock' && @hand2 == 'paper'
-      return 'paper'
+      return @hand2
     when @hand1 == 'scissors' && @hand2 == 'rock'
-      return 'rock'
-    else @hand1 == @hand2
-      return 'draw'
+      return @hand2
+    when @hand1 == @hand2
+      return "neither. It's a draw!!"
+    else
+      return "neither. It's an invalid entry"
     end
   end
 
